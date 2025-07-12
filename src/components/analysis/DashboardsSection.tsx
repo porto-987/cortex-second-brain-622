@@ -52,47 +52,7 @@ export function DashboardsSection({ dashboardStats, recentReports }: DashboardsS
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Tableaux de Bord Disponibles</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-                  <div className="flex items-center gap-3">
-                    <BarChart3 className="w-5 h-5 text-blue-600" />
-                    <div>
-                      <div className="font-medium">Tableau Principal</div>
-                      <div className="text-sm text-gray-500">Vue d'ensemble générale</div>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">Ouvrir</Button>
-                </div>
-                <div className="flex items-center justify-between p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-                  <div className="flex items-center gap-3">
-                    <PieChart className="w-5 h-5 text-green-600" />
-                    <div>
-                      <div className="font-medium">Statistiques d'Usage</div>
-                      <div className="text-sm text-gray-500">Métriques d'utilisation</div>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">Ouvrir</Button>
-                </div>
-                <div className="flex items-center justify-between p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
-                  <div className="flex items-center gap-3">
-                    <LineChart className="w-5 h-5 text-purple-600" />
-                    <div>
-                      <div className="font-medium">Tendances Temporelles</div>
-                      <div className="text-sm text-gray-500">Évolution dans le temps</div>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">Ouvrir</Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
           <Card>
             <CardHeader>
               <CardTitle>Rapports Récents</CardTitle>

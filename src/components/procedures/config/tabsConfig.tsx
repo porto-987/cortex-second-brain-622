@@ -6,6 +6,10 @@ import { ProcedureResourcesSection } from '../../ProcedureResourcesSection';
 import { ProcedureSearchSection } from '../../ProcedureSearchSection';
 import { TimelineTab } from '../tabs/TimelineTab';
 import { EnrichmentTab } from '../tabs/EnrichmentTab';
+import { ProcedurePopularSearchesTab } from '../ProcedurePopularSearchesTab';
+import { NextGenSearchSection } from '../../search/NextGenSearchSection';
+import { ProcedureSearchHistoryTab } from '../ProcedureSearchHistoryTab';
+import { SavedSearchesEnhanced } from '../../SavedSearchesEnhanced';
 
 interface TabConfig {
   value: string;
@@ -92,7 +96,31 @@ export function getTabsConfig({
           { 
             value: 'search', 
             label: 'Recherche', 
-            content: <ProcedureSearchSection />
+            content: (
+              <div className="text-center py-12">
+                <p className="text-gray-600">Utilisez les autres onglets pour accéder aux fonctionnalités de recherche</p>
+              </div>
+            )
+          },
+          { 
+            value: 'nextgen', 
+            label: 'Nouvelle Génération', 
+            content: <NextGenSearchSection />
+          },
+          { 
+            value: 'history', 
+            label: 'Historique des recherches', 
+            content: <ProcedureSearchHistoryTab />
+          },
+          { 
+            value: 'saved-searches', 
+            label: 'Recherches sauvegardées', 
+            content: <SavedSearchesEnhanced />
+          },
+          { 
+            value: 'popular-searches', 
+            label: 'Recherches populaires', 
+            content: <ProcedurePopularSearchesTab />
           }
         ]
       };

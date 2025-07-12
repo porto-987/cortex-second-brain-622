@@ -24,7 +24,7 @@ import { ActionButtonsDemo } from "@/components/examples/ActionButtonsDemo";
 import { AIAdvancedSection } from "@/components/ai/AIAdvancedSection";
 import { AnalyticsDashboardsSection } from "@/components/analytics/AnalyticsDashboardsSection";
 
-import { NextGenSearchSection } from "@/components/search/NextGenSearchSection";
+// NextGenSearchSection intégré dans les onglets de recherche
 import { EnhancedAILegalAssistant } from "@/components/ai/EnhancedAILegalAssistant";
 import { AdminPanel } from "@/components/admin/AdminPanel";
 
@@ -118,8 +118,7 @@ export function ContentRenderer({ activeSection, language }: ContentRendererProp
       return <EnhancedAILegalAssistant />;
     case "ai-advanced":
       return <AIAdvancedSection />;
-    case "ai-search":
-      return <NextGenSearchSection />;
+    // ai-search désormais intégré dans les onglets de recherche
     
     // Admin section
     case "admin":

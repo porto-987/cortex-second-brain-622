@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { performanceMonitor } from '@/utils/performanceMonitor';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Activity, Zap } from 'lucide-react';
@@ -11,6 +11,19 @@ interface PerformanceStats {
   slowOperations: number;
 }
 
+interface PerformanceReport {
+  vitals: {
+    loadComplete?: number;
+    memoryUsage?: {
+      used: number;
+    };
+    recentMetrics?: Array<{
+      category: string;
+    }>;
+  };
+  slowOperations?: Array<unknown>;
+}
+
 export function PerformanceOptimizer({ children }: { children: React.ReactNode }) {
   const [stats, setStats] = useState<PerformanceStats>({
     loadTime: 0,
@@ -20,14 +33,28 @@ export function PerformanceOptimizer({ children }: { children: React.ReactNode }
   });
   
   const [showAlert, setShowAlert] = useState(false);
+  const animationFrameRef = useRef<number>();
+  const lastUpdateRef = useRef<number>(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const report = performanceMonitor.getPerformanceReport();
+  const updateStats = useCallback(() => {
+    const now = performance.now();
+    
+    // Update every 30 seconds instead of continuous polling
+    if (now - lastUpdateRef.current < 30000) {
+      animationFrameRef.current = requestAnimationFrame(updateStats);
+      return;
+    }
+    
+    lastUpdateRef.current = now;
+    
+    try {
+      const report = performanceMonitor.getPerformanceReport() as PerformanceReport;
+      const memoryInfo = (performance as unknown as { memory?: { usedJSHeapSize: number } }).memory;
+      
       const newStats = {
         loadTime: report.vitals.loadComplete || performance.now(),
-        memoryUsage: report.vitals.memoryUsage?.used || (performance as any).memory?.usedJSHeapSize || 0,
-        interactions: report.vitals.recentMetrics?.filter((m: any) => m.category === 'interaction').length || 0,
+        memoryUsage: report.vitals.memoryUsage?.used || memoryInfo?.usedJSHeapSize || 0,
+        interactions: report.vitals.recentMetrics?.filter((m) => m.category === 'interaction').length || 0,
         slowOperations: report.slowOperations?.length || 0
       };
       
@@ -37,9 +64,25 @@ export function PerformanceOptimizer({ children }: { children: React.ReactNode }
       if (newStats.slowOperations > 5 || newStats.memoryUsage > 50000000) {
         setShowAlert(true);
       }
-    }, 30000);
+    } catch (error) {
+      // Silently handle errors in performance monitoring
+    }
+    
+    animationFrameRef.current = requestAnimationFrame(updateStats);
+  }, []);
 
-    return () => clearInterval(interval);
+  useEffect(() => {
+    animationFrameRef.current = requestAnimationFrame(updateStats);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [updateStats]);
+
+  const handleAlertClose = useCallback(() => {
+    setShowAlert(false);
   }, []);
 
   return (
@@ -50,7 +93,7 @@ export function PerformanceOptimizer({ children }: { children: React.ReactNode }
           <AlertDescription className="text-yellow-800">
             Performance dégradée détectée. Optimisation en cours...
             <button 
-              onClick={() => setShowAlert(false)}
+              onClick={handleAlertClose}
               className="ml-2 text-sm underline hover:no-underline"
             >
               OK

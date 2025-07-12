@@ -9,6 +9,7 @@ import { MainHeader } from "@/components/layout/MainHeader";
 import { ContentRenderer } from "@/components/layout/ContentRenderer";
 import { SecurityProvider } from "@/components/security/SecurityProvider";
 
+// Move VALID_SECTIONS outside component to prevent recreation on every render
 const VALID_SECTIONS = new Set([
   "dashboard", "legal-catalog", "legal-enrichment", "legal-search",
   "procedures-catalog", "procedures-enrichment", "procedures-search", "procedures-resources",
@@ -21,6 +22,17 @@ const VALID_SECTIONS = new Set([
   "data-extraction", "document-templates", "advanced-search", "saved-searches",
   "ai-assistant", "ai-comprehensive-test", "admin"
 ]);
+
+// Accessibility announcement utility
+const announceNavigation = (targetSection: string) => {
+  // Use aria-live region instead of DOM manipulation
+  const announcement = `Navigation vers la section: ${targetSection}`;
+  
+  // Dispatch custom event for screen readers
+  window.dispatchEvent(new CustomEvent('navigation-announcement', {
+    detail: { message: announcement }
+  }));
+};
 
 const Index = () => {
   const { section } = useParams();
@@ -38,7 +50,6 @@ const Index = () => {
 
   // Navigation with browser history
   const handleSectionChange = useCallback((newSection: string) => {
-    console.log('Attempting to navigate to section:', newSection);
     if (VALID_SECTIONS.has(newSection)) {
       setActiveSection(newSection);
       if (newSection === "dashboard") {
@@ -46,36 +57,18 @@ const Index = () => {
       } else {
         navigate(`/${newSection}`, { replace: false });
       }
-      console.log('Successfully navigated to section:', newSection);
-    } else {
-      console.warn(`Section invalide tentée: ${newSection}`);
+      
+      // Announce navigation for accessibility
+      announceNavigation(newSection);
     }
   }, [navigate]);
 
   useEffect(() => {
     const handleNavigateToSection = (event: CustomEvent) => {
-      console.log('Navigation event received:', event.detail);
       const targetSection = event.detail;
       
       if (typeof targetSection === 'string' && VALID_SECTIONS.has(targetSection)) {
         handleSectionChange(targetSection);
-        
-        // Amélioration de l'accessibilité - annoncer le changement de section
-        const announcement = document.createElement('div');
-        announcement.setAttribute('aria-live', 'polite');
-        announcement.setAttribute('aria-atomic', 'true');
-        announcement.className = 'sr-only';
-        announcement.textContent = `Navigation vers la section: ${targetSection}`;
-        document.body.appendChild(announcement);
-        
-        // Nettoyer l'annonce après un délai
-        setTimeout(() => {
-          if (document.body.contains(announcement)) {
-            document.body.removeChild(announcement);
-          }
-        }, 1000);
-      } else {
-        console.warn(`Section invalide reçue via événement: ${targetSection}`);
       }
     };
 
@@ -121,6 +114,14 @@ const Index = () => {
         >
           Aller au contenu principal
         </a>
+
+        {/* Aria-live region for navigation announcements */}
+        <div 
+          aria-live="polite" 
+          aria-atomic="true" 
+          className="sr-only"
+          id="navigation-announcements"
+        />
 
         {/* Header gouvernemental */}
         <GovernmentHeader language={language} onLanguageChange={handleLanguageChange} />

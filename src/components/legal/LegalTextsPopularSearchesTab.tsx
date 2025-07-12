@@ -146,20 +146,6 @@ export function LegalTextsPopularSearchesTab() {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {searchCards.map((card, index) => (
-          <SearchCard key={index} {...card} />
-        ))}
-      </div>
-
-      <SavedItemsList
-        title="Recherches juridiques sauvegardées"
-        description="Vos dernières recherches dans les textes juridiques algériens"
-        icon={Bookmark}
-        items={savedLegalSearches}
-        onViewAll={() => {}}
-      />
-
       <PopularItemsList
         title="Recherches juridiques populaires"
         description="Les textes juridiques les plus consultés par les professionnels du droit"

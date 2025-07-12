@@ -91,20 +91,11 @@ export function getTabsConfig({
 
     case 'procedures-search':
       return {
-        defaultValue: 'search',
+        defaultValue: 'nextgen',
         tabs: [
           { 
-            value: 'search', 
-            label: 'Recherche', 
-            content: (
-              <div className="text-center py-12">
-                <p className="text-gray-600">Utilisez les autres onglets pour accéder aux fonctionnalités de recherche</p>
-              </div>
-            )
-          },
-          { 
             value: 'nextgen', 
-            label: 'Nouvelle Génération', 
+            label: 'Recherche Nouvelle Génération', 
             content: <NextGenSearchSection />
           },
           { 

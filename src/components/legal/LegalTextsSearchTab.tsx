@@ -13,14 +13,11 @@ import { NextGenSearchSection } from "../search/NextGenSearchSection";
 export function LegalTextsSearchTab() {
   return (
     <div className="space-y-6">
-      <Tabs defaultValue="search" className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="search" className="text-sm">
-            Recherche
-          </TabsTrigger>
+      <Tabs defaultValue="nextgen" className="w-full">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="nextgen" className="text-sm">
             <Zap className="w-4 h-4 mr-1" />
-            Nouvelle Génération
+            Recherche Nouvelle Génération
           </TabsTrigger>
           <TabsTrigger value="history" className="text-sm">
             Historique des recherches
@@ -29,16 +26,9 @@ export function LegalTextsSearchTab() {
             Recherches sauvegardées
           </TabsTrigger>
           <TabsTrigger value="popular-searches" className="text-sm">
-            Recherches juridiques populaires
+            Recherches populaires
           </TabsTrigger>
         </TabsList>
-        
-        <TabsContent value="search" className="mt-6">
-          {/* Onglet de recherche simple maintenant vide ou avec nouvelle fonctionnalité */}
-          <div className="text-center py-12">
-            <p className="text-gray-600">Utilisez les autres onglets pour accéder aux fonctionnalités de recherche</p>
-          </div>
-        </TabsContent>
 
         <TabsContent value="nextgen" className="mt-6">
           <NextGenSearchSection />

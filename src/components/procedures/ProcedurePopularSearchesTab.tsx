@@ -146,20 +146,6 @@ export function ProcedurePopularSearchesTab() {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {searchCards.map((card, index) => (
-          <SearchCard key={index} {...card} />
-        ))}
-      </div>
-
-      <SavedItemsList
-        title="Recherches de procédures sauvegardées"
-        description="Vos dernières recherches dans les procédures administratives"
-        icon={Bookmark}
-        items={savedProcedureSearches}
-        onViewAll={() => {}}
-      />
-
       <PopularItemsList
         title="Procédures administratives populaires"
         description="Les procédures les plus recherchées par les citoyens algériens"

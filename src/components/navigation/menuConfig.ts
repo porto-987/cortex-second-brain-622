@@ -57,8 +57,7 @@ export const menuItems = [
     icon: Brain,
     submenu: [
       { label: "Assistant IA Juridique", section: "ai-assistant" },
-      { label: "IA Avancée", section: "ai-advanced" },
-      { label: "Recherche IA", section: "ai-search" }
+      { label: "IA Avancée", section: "ai-advanced" }
     ]
   },
   {

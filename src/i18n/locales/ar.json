@@ -13,22 +13,113 @@
     "error": "خطأ",
     "success": "نجح",
     "warning": "تحذير",
-    "info": "معلومات"
+    "info": "معلومات",
+    "add": "إضافة",
+    "export": "تصدير",
+    "import": "استيراد",
+    "refresh": "تحديث",
+    "sort": "ترتيب",
+    "close": "إغلاق",
+    "open": "فتح",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "upload": "رفع",
+    "date": "التاريخ",
+    "name": "الاسم",
+    "type": "النوع",
+    "status": "الحالة",
+    "actions": "الإجراءات",
+    "description": "الوصف",
+    "title": "العنوان",
+    "content": "المحتوى",
+    "settings": "الإعدادات",
+    "help": "مساعدة",
+    "about": "حول",
+    "contact": "اتصال",
+    "support": "دعم",
+    "favorites": "المفضلة",
+    "recent": "الأحدث",
+    "all": "الكل",
+    "none": "لا شيء",
+    "other": "أخرى",
+    "yes": "نعم",
+    "no": "لا",
+    "confirm": "تأكيد",
+    "submit": "إرسال",
+    "apply": "تطبيق",
+    "reset": "إعادة تعيين",
+    "clear": "مسح",
+    "select": "اختيار",
+    "required": "مطلوب",
+    "optional": "اختياري"
   },
   "header": {
     "title": "dalil.dz",
     "subtitle": "منصة المراقبة القانونية والتنظيمية",
-    "searchPlaceholder": "بحث سريع..."
+    "searchPlaceholder": "بحث سريع...",
+    "republicAr": "الجمهورية الجزائرية الديمقراطية الشعبية",
+    "republicFr": "الجمهورية الجزائرية الديمقراطية الشعبية"
   },
   "navigation": {
-    "dashboard": "لوحة القيادة",
+    "dashboard": "الرئيسية",
     "legalTexts": "النصوص القانونية",
     "procedures": "الإجراءات الإدارية",
-    "analysis": "التحليلات والتقارير",
+    "analysis": "التحليل والتقارير",
+    "ai": "الذكاء الاصطناعي",
     "collaboration": "التعاون",
     "news": "الأخبار والمراجع",
     "configuration": "التكوين",
-    "help": "مساعدة"
+    "help": "مساعدة",
+    "menu": {
+      "legal": {
+        "catalog": "الفهرس",
+        "enrichment": "تغذية قاعدة البيانات",
+        "search": "البحث"
+      },
+      "procedures": {
+        "catalog": "الفهرس",
+        "enrichment": "تغذية قاعدة البيانات",
+        "search": "البحث",
+        "resources": "الموارد"
+      },
+      "analysis": {
+        "dashboards": "لوحات المعلومات",
+        "analyticsDashboards": "لوحات المعلومات التحليلية",
+        "analysis": "التحليلات",
+        "reports": "التقارير",
+        "assistedWriting": "الكتابة المساعدة"
+      },
+      "ai": {
+        "assistant": "مساعد الذكاء الاصطناعي القانوني",
+        "advanced": "الذكاء الاصطناعي المتقدم",
+        "search": "البحث بالذكاء الاصطناعي"
+      },
+      "collaboration": {
+        "forum": "المنتدى",
+        "workspace": "مساحة العمل التعاونية",
+        "sharedResources": "الموارد المشتركة"
+      },
+      "news": {
+        "news": "الأخبار",
+        "library": "المكتبة",
+        "dictionaries": "القواميس",
+        "directories": "الأدلة"
+      },
+      "config": {
+        "nomenclature": "التسمية",
+        "complementaryResources": "الموارد التكميلية",
+        "dataManagement": "إدارة البيانات",
+        "alertsNotifications": "التنبيهات والإشعارات",
+        "userManagement": "إدارة المستخدمين",
+        "security": "الأمان",
+        "performance": "الأداء وقابلية التوسع",
+        "integrations": "التكاملات والتشغيل البيني",
+        "accessibility": "إعدادات إمكانية الوصول",
+        "offline": "وضع عدم الاتصال",
+        "mobile": "النسخة المحمولة الأصلية"
+      }
+    }
   },
   "auth": {
     "login": "تسجيل الدخول",
@@ -43,13 +134,153 @@
     "loginError": "خطأ في تسجيل الدخول",
     "registerError": "خطأ في التسجيل",
     "loginSuccess": "تم تسجيل الدخول بنجاح",
-    "registerSuccess": "تم التسجيل بنجاح"
+    "registerSuccess": "تم التسجيل بنجاح",
+    "profile": "الملف الشخصي",
+    "account": "الحساب",
+    "preferences": "التفضيلات"
+  },
+  "dashboard": {
+    "title": "لوحة المعلومات",
+    "welcome": "مرحباً بك في dalil.dz",
+    "quickAccess": "الوصول السريع",
+    "recentDocuments": "الوثائق الأخيرة",
+    "statistics": "الإحصائيات",
+    "notifications": "الإشعارات",
+    "shortcuts": "الاختصارات",
+    "overview": "نظرة عامة"
+  },
+  "legalTexts": {
+    "title": "النصوص القانونية",
+    "catalog": "فهرس النصوص القانونية",
+    "search": "البحث في النصوص",
+    "addNew": "إضافة نص جديد",
+    "type": "نوع النص",
+    "datePublication": "تاريخ النشر",
+    "status": "الحالة",
+    "reference": "المرجع",
+    "subject": "الموضوع",
+    "ministry": "الوزارة",
+    "journal": "الجريدة الرسمية",
+    "page": "الصفحة",
+    "classification": "التصنيف"
+  },
+  "procedures": {
+    "title": "الإجراءات الإدارية",
+    "catalog": "فهرس الإجراءات",
+    "search": "البحث في الإجراءات",
+    "addNew": "إضافة إجراء جديد",
+    "steps": "الخطوات",
+    "duration": "المدة",
+    "documents": "الوثائق المطلوبة",
+    "cost": "التكلفة",
+    "department": "القسم المختص",
+    "complexity": "التعقيد",
+    "category": "الفئة"
+  },
+  "ai": {
+    "title": "الذكاء الاصطناعي",
+    "assistant": "مساعد الذكاء الاصطناعي القانوني",
+    "question": "اطرح سؤالك",
+    "answer": "الإجابة",
+    "suggestions": "الاقتراحات",
+    "conversation": "المحادثة",
+    "newConversation": "محادثة جديدة",
+    "history": "التاريخ",
+    "analysis": "التحليل",
+    "recommendations": "التوصيات"
+  },
+  "search": {
+    "title": "البحث",
+    "advanced": "البحث المتقدم",
+    "filters": "المرشحات",
+    "results": "النتائج",
+    "noResults": "لم يتم العثور على نتائج",
+    "searchIn": "البحث في",
+    "dateRange": "نطاق التاريخ",
+    "sortBy": "ترتيب حسب",
+    "relevance": "الصلة",
+    "dateAsc": "التاريخ تصاعدي",
+    "dateDesc": "التاريخ تنازلي",
+    "keywords": "الكلمات المفتاحية",
+    "exactPhrase": "العبارة الدقيقة",
+    "anyWord": "أي كلمة",
+    "allWords": "جميع الكلمات"
+  },
+  "collaboration": {
+    "title": "التعاون",
+    "forum": "منتدى النقاش",
+    "workspace": "مساحة العمل التعاونية",
+    "share": "مشاركة",
+    "comment": "تعليق",
+    "like": "إعجاب",
+    "follow": "متابعة",
+    "message": "رسالة",
+    "thread": "موضوع النقاش",
+    "post": "نشر",
+    "reply": "رد"
+  },
+  "reports": {
+    "title": "التقارير والتحليلات",
+    "generate": "إنشاء تقرير",
+    "template": "النموذج",
+    "period": "الفترة",
+    "export": "تصدير",
+    "chart": "مخطط",
+    "table": "جدول",
+    "summary": "ملخص",
+    "details": "التفاصيل"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "markAsRead": "وضع علامة كمقروء",
+    "markAllAsRead": "وضع علامة على الكل كمقروء",
+    "new": "جديد",
+    "unread": "غير مقروء",
+    "read": "مقروء",
+    "alert": "تنبيه",
+    "reminder": "تذكير",
+    "update": "تحديث"
   },
   "validation": {
     "required": "هذا الحقل مطلوب",
     "email": "عنوان بريد إلكتروني غير صالح",
     "minLength": "الحد الأدنى {{count}} أحرف",
     "maxLength": "الحد الأقصى {{count}} أحرف",
-    "passwordMismatch": "كلمات المرور غير متطابقة"
+    "passwordMismatch": "كلمات المرور غير متطابقة",
+    "invalidFormat": "تنسيق غير صالح",
+    "invalidDate": "تاريخ غير صالح",
+    "mustBeNumber": "يجب أن يكون رقم",
+    "mustBePositive": "يجب أن يكون موجب"
+  },
+  "accessibility": {
+    "skipToContent": "الانتقال إلى المحتوى الرئيسي",
+    "openMenu": "فتح قائمة التنقل",
+    "closeMenu": "إغلاق القائمة",
+    "viewFavorites": "عرض المفضلة",
+    "aiSearch": "البحث بالذكاء الاصطناعي",
+    "mobileNavigation": "قائمة التنقل المحمولة",
+    "languageSelector": "محدد اللغة",
+    "notifications": "الإشعارات",
+    "userAccount": "حساب المستخدم",
+    "messages": "الرسائل"
+  },
+  "errors": {
+    "pageNotFound": "الصفحة غير موجودة",
+    "serverError": "خطأ في الخادم",
+    "networkError": "خطأ في الشبكة",
+    "unauthorized": "غير مخول",
+    "forbidden": "الوصول ممنوع",
+    "sessionExpired": "انتهت صلاحية الجلسة",
+    "tryAgain": "حاول مرة أخرى",
+    "contactSupport": "اتصل بالدعم"
+  },
+  "messages": {
+    "dataUpdated": "تم تحديث البيانات بنجاح",
+    "dataSaved": "تم حفظ البيانات",
+    "dataDeleted": "تم حذف البيانات",
+    "operationCompleted": "تم إكمال العملية",
+    "operationFailed": "فشل في العملية",
+    "pleaseWait": "يرجى الانتظار",
+    "processingRequest": "جاري معالجة الطلب"
   }
 }

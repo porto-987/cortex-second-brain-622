@@ -1,5 +1,6 @@
 
 import { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -12,6 +13,7 @@ interface NavigationMenuProps {
 }
 
 export function NavigationMenu({ onSectionChange, activeSection, isMobile = false }: NavigationMenuProps) {
+  const { t } = useTranslation();
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -56,7 +58,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
                   isActive ? "bg-green-50 text-green-700 border border-green-200" : "text-gray-700"
                 )}>
                   <IconComponent className="w-5 h-5" />
-                  <span>{item.label}</span>
+                  <span>{t(item.labelKey)}</span>
                 </div>
                 <div className="ml-8 space-y-1">
                   {item.submenu.map((subItem) => (
@@ -69,7 +71,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
                       )}
                       onClick={() => onSectionChange(subItem.section)}
                     >
-                      {subItem.label}
+                      {t(subItem.labelKey)}
                     </Button>
                   ))}
                 </div>
@@ -89,7 +91,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
             >
               <div className="flex items-center gap-3">
                 <IconComponent className="w-5 h-5" />
-                <span>{item.label}</span>
+                <span>{t(item.labelKey)}</span>
               </div>
             </Button>
           );
@@ -124,7 +126,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
                   )}
                 >
                   <IconComponent className="w-3.5 h-3.5 flex-shrink-0" />
-                  <span className="text-[10px] lg:text-xs truncate">{item.label}</span>
+                  <span className="text-[10px] lg:text-xs truncate">{t(item.labelKey)}</span>
                   <ChevronDown className="w-2.5 h-2.5 flex-shrink-0" />
                 </Button>
                 
@@ -152,7 +154,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
                             }
                           }}
                         >
-                          {subItem.label}
+                          {t(subItem.labelKey)}
                         </button>
                       ))}
                     </div>
@@ -173,7 +175,7 @@ export function NavigationMenu({ onSectionChange, activeSection, isMobile = fals
               onClick={() => onSectionChange(item.section)}
             >
               <IconComponent className="w-3.5 h-3.5 flex-shrink-0" />
-              <span className="text-[10px] lg:text-xs truncate">{item.label}</span>
+              <span className="text-[10px] lg:text-xs truncate">{t(item.labelKey)}</span>
             </Button>
           );
         })}

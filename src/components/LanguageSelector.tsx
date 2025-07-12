@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Check, ChevronDown, Languages } from "lucide-react";
@@ -15,16 +16,23 @@ interface LanguageSelectorProps {
 }
 
 export function LanguageSelector({ onLanguageChange }: LanguageSelectorProps) {
-  const [selectedLang, setSelectedLang] = useState('fr');
+  const { i18n } = useTranslation();
+  const [selectedLang, setSelectedLang] = useState(i18n.language || 'fr');
   const [open, setOpen] = useState(false);
 
   const currentLanguage = languages.find(lang => lang.code === selectedLang);
 
   const handleLanguageChange = (languageCode: string) => {
     setSelectedLang(languageCode);
+    
+    // Change language in i18n
+    i18n.changeLanguage(languageCode);
+    
+    // Call the optional callback
     if (onLanguageChange) {
       onLanguageChange(languageCode);
     }
+    
     setOpen(false);
   };
 

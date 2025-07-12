@@ -93,6 +93,117 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  /* RTL Support */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* RTL adjustments for specific elements */
+  [dir="rtl"] .flex {
+    flex-direction: row-reverse;
+  }
+
+  [dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0.25rem;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0.5rem;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0.75rem;
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 1rem;
+    margin-left: 0;
+  }
+
+  /* Text alignment for RTL */
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  /* Margin adjustments for RTL */
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  [dir="rtl"] .mr-auto {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  /* Padding adjustments for RTL */
+  [dir="rtl"] .pl-4 {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  [dir="rtl"] .pr-4 {
+    padding-right: 0;
+    padding-left: 1rem;
+  }
+
+  /* Border adjustments for RTL */
+  [dir="rtl"] .border-l-2 {
+    border-left: 0;
+    border-right: 2px solid;
+  }
+
+  [dir="rtl"] .border-r-2 {
+    border-right: 0;
+    border-left: 2px solid;
+  }
+
+  /* Position adjustments for RTL */
+  [dir="rtl"] .left-0 {
+    left: auto;
+    right: 0;
+  }
+
+  [dir="rtl"] .right-0 {
+    right: auto;
+    left: 0;
+  }
+
+  [dir="rtl"] .left-4 {
+    left: auto;
+    right: 1rem;
+  }
+
+  [dir="rtl"] .right-4 {
+    right: auto;
+    left: 1rem;
+  }
+
+  /* Arabic font improvements */
+  [dir="rtl"] {
+    font-family: 'Changa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Ensure Arabic text is properly rendered */
+  [lang="ar"] {
+    font-family: 'Changa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
 }
 
 @layer utilities {
@@ -125,6 +236,49 @@
   .hover-lift:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  /* RTL-specific utilities */
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(1);
+  }
+
+  /* Text direction utilities */
+  .text-start {
+    text-align: start;
+  }
+
+  .text-end {
+    text-align: end;
+  }
+
+  /* RTL-aware spacing utilities */
+  .ms-auto {
+    margin-inline-start: auto;
+  }
+
+  .me-auto {
+    margin-inline-end: auto;
+  }
+
+  .ps-4 {
+    padding-inline-start: 1rem;
+  }
+
+  .pe-4 {
+    padding-inline-end: 1rem;
+  }
+
+  .border-s-2 {
+    border-inline-start: 2px solid;
+  }
+
+  .border-e-2 {
+    border-inline-end: 2px solid;
   }
 }
 

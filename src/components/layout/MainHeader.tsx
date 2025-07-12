@@ -9,6 +9,7 @@ import { MessagesDropdown } from "@/components/MessagesDropdown";
 import { MainNavigation } from "@/components/MainNavigation";
 import { EnhancedInput } from "@/components/common/EnhancedInput";
 import { useCallback, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MainHeaderProps {
   language: string;
@@ -18,28 +19,8 @@ interface MainHeaderProps {
 }
 
 export function MainHeader({ language, activeSection, onLanguageChange, onSectionChange }: MainHeaderProps) {
+  const { t } = useTranslation();
   const [quickSearchValue, setQuickSearchValue] = useState('');
-
-  const getHeaderText = useCallback((key: string) => {
-    const translations = {
-      fr: {
-        title: "dalil.dz",
-        subtitle: "Plateforme de veille juridique et réglementaire",
-        searchPlaceholder: "Recherche rapide..."
-      },
-      ar: {
-        title: "dalil.dz",
-        subtitle: "منصة المراقبة القانونية والتنظيمية",
-        searchPlaceholder: "بحث سريع..."
-      },
-      en: {
-        title: "dalil.dz",
-        subtitle: "Legal and regulatory monitoring platform",
-        searchPlaceholder: "Quick search..."
-      }
-    };
-    return translations[language as keyof typeof translations]?.[key as keyof typeof translations['fr']] || key;
-  }, [language]);
 
   const handleFavoritesClick = useCallback(() => {
     onSectionChange("favorites");
@@ -56,10 +37,10 @@ export function MainHeader({ language, activeSection, onLanguageChange, onSectio
   }, [quickSearchValue, onSectionChange]);
 
   const headerTexts = useMemo(() => ({
-    title: getHeaderText("title"),
-    subtitle: getHeaderText("subtitle"),
-    searchPlaceholder: getHeaderText("searchPlaceholder")
-  }), [getHeaderText]);
+    title: t("header.title"),
+    subtitle: t("header.subtitle"),
+    searchPlaceholder: t("header.searchPlaceholder")
+  }), [t]);
 
   return (
     <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-2 sticky top-0 z-50" role="banner">
@@ -103,8 +84,8 @@ export function MainHeader({ language, activeSection, onLanguageChange, onSectio
               size="sm" 
               onClick={handleFavoritesClick}
               className="relative hidden sm:flex p-2"
-              title="Favoris"
-              aria-label="Voir les favoris"
+              title={t("common.favorites")}
+              aria-label={t("accessibility.viewFavorites")}
             >
               <Star className="w-4 h-4" aria-hidden="true" />
             </Button>
@@ -114,8 +95,8 @@ export function MainHeader({ language, activeSection, onLanguageChange, onSectio
               size="sm" 
               onClick={handleAISearchClick}
               className="relative hidden sm:flex p-2"
-              title="Recherche IA"
-              aria-label="Recherche avec intelligence artificielle"
+              title={t("ai.title")}
+              aria-label={t("accessibility.aiSearch")}
             >
               <Bot className="w-4 h-4" aria-hidden="true" />
             </Button>
@@ -126,11 +107,11 @@ export function MainHeader({ language, activeSection, onLanguageChange, onSectio
             
             <Sheet>
               <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="sm" aria-label="Ouvrir le menu de navigation">
+                <Button variant="ghost" size="sm" aria-label={t("accessibility.openMenu")}>
                   <Menu className="w-5 h-5" aria-hidden="true" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 p-0" aria-label="Menu de navigation mobile">
+              <SheetContent side="right" className="w-80 p-0" aria-label={t("accessibility.mobileNavigation")}>
                 <div className="p-4">
                   <div className="relative mb-4">
                     <EnhancedInput

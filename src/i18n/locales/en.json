@@ -13,22 +13,113 @@
     "error": "Error",
     "success": "Success",
     "warning": "Warning",
-    "info": "Information"
+    "info": "Information",
+    "add": "Add",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh",
+    "sort": "Sort",
+    "close": "Close",
+    "open": "Open",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "upload": "Upload",
+    "date": "Date",
+    "name": "Name",
+    "type": "Type",
+    "status": "Status",
+    "actions": "Actions",
+    "description": "Description",
+    "title": "Title",
+    "content": "Content",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "support": "Support",
+    "favorites": "Favorites",
+    "recent": "Recent",
+    "all": "All",
+    "none": "None",
+    "other": "Other",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "apply": "Apply",
+    "reset": "Reset",
+    "clear": "Clear",
+    "select": "Select",
+    "required": "Required",
+    "optional": "Optional"
   },
   "header": {
     "title": "dalil.dz",
     "subtitle": "Legal and regulatory monitoring platform",
-    "searchPlaceholder": "Quick search..."
+    "searchPlaceholder": "Quick search...",
+    "republicAr": "الجمهورية الجزائرية الديمقراطية الشعبية",
+    "republicFr": "People's Democratic Republic of Algeria"
   },
   "navigation": {
-    "dashboard": "Dashboard",
+    "dashboard": "Home",
     "legalTexts": "Legal Texts",
     "procedures": "Administrative Procedures",
-    "analysis": "Analysis and Reports",
+    "analysis": "Analysis & Reports",
+    "ai": "Artificial Intelligence",
     "collaboration": "Collaboration",
-    "news": "News and References",
+    "news": "News & References",
     "configuration": "Configuration",
-    "help": "Help"
+    "help": "Help",
+    "menu": {
+      "legal": {
+        "catalog": "Catalog",
+        "enrichment": "Database enrichment",
+        "search": "Search"
+      },
+      "procedures": {
+        "catalog": "Catalog",
+        "enrichment": "Database enrichment",
+        "search": "Search",
+        "resources": "Resources"
+      },
+      "analysis": {
+        "dashboards": "Dashboards",
+        "analyticsDashboards": "Analytics dashboards",
+        "analysis": "Analysis",
+        "reports": "Reports",
+        "assistedWriting": "Assisted writing"
+      },
+      "ai": {
+        "assistant": "Legal AI Assistant",
+        "advanced": "Advanced AI",
+        "search": "AI Search"
+      },
+      "collaboration": {
+        "forum": "Forum",
+        "workspace": "Collaborative workspace",
+        "sharedResources": "Shared resources"
+      },
+      "news": {
+        "news": "News",
+        "library": "Library",
+        "dictionaries": "Dictionaries",
+        "directories": "Directories"
+      },
+      "config": {
+        "nomenclature": "Nomenclature",
+        "complementaryResources": "Complementary resources",
+        "dataManagement": "Data governance",
+        "alertsNotifications": "Alerts & Notifications",
+        "userManagement": "User management",
+        "security": "Security",
+        "performance": "Performance and scalability",
+        "integrations": "Integrations and interoperability",
+        "accessibility": "Accessibility settings",
+        "offline": "Offline mode",
+        "mobile": "Native mobile version"
+      }
+    }
   },
   "auth": {
     "login": "Login",
@@ -43,13 +134,153 @@
     "loginError": "Login Error",
     "registerError": "Registration Error",
     "loginSuccess": "Login Successful",
-    "registerSuccess": "Registration Successful"
+    "registerSuccess": "Registration Successful",
+    "profile": "Profile",
+    "account": "Account",
+    "preferences": "Preferences"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to dalil.dz",
+    "quickAccess": "Quick access",
+    "recentDocuments": "Recent documents",
+    "statistics": "Statistics",
+    "notifications": "Notifications",
+    "shortcuts": "Shortcuts",
+    "overview": "Overview"
+  },
+  "legalTexts": {
+    "title": "Legal Texts",
+    "catalog": "Legal texts catalog",
+    "search": "Search texts",
+    "addNew": "Add new text",
+    "type": "Text type",
+    "datePublication": "Publication date",
+    "status": "Status",
+    "reference": "Reference",
+    "subject": "Subject",
+    "ministry": "Ministry",
+    "journal": "Official journal",
+    "page": "Page",
+    "classification": "Classification"
+  },
+  "procedures": {
+    "title": "Administrative Procedures",
+    "catalog": "Procedures catalog",
+    "search": "Search procedures",
+    "addNew": "Add new procedure",
+    "steps": "Steps",
+    "duration": "Duration",
+    "documents": "Required documents",
+    "cost": "Cost",
+    "department": "Concerned department",
+    "complexity": "Complexity",
+    "category": "Category"
+  },
+  "ai": {
+    "title": "Artificial Intelligence",
+    "assistant": "Legal AI Assistant",
+    "question": "Ask your question",
+    "answer": "Answer",
+    "suggestions": "Suggestions",
+    "conversation": "Conversation",
+    "newConversation": "New conversation",
+    "history": "History",
+    "analysis": "Analysis",
+    "recommendations": "Recommendations"
+  },
+  "search": {
+    "title": "Search",
+    "advanced": "Advanced search",
+    "filters": "Filters",
+    "results": "Results",
+    "noResults": "No results found",
+    "searchIn": "Search in",
+    "dateRange": "Date range",
+    "sortBy": "Sort by",
+    "relevance": "Relevance",
+    "dateAsc": "Date ascending",
+    "dateDesc": "Date descending",
+    "keywords": "Keywords",
+    "exactPhrase": "Exact phrase",
+    "anyWord": "Any word",
+    "allWords": "All words"
+  },
+  "collaboration": {
+    "title": "Collaboration",
+    "forum": "Discussion forum",
+    "workspace": "Collaborative workspace",
+    "share": "Share",
+    "comment": "Comment",
+    "like": "Like",
+    "follow": "Follow",
+    "message": "Message",
+    "thread": "Discussion thread",
+    "post": "Post",
+    "reply": "Reply"
+  },
+  "reports": {
+    "title": "Reports and Analysis",
+    "generate": "Generate report",
+    "template": "Template",
+    "period": "Period",
+    "export": "Export",
+    "chart": "Chart",
+    "table": "Table",
+    "summary": "Summary",
+    "details": "Details"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAsRead": "Mark as read",
+    "markAllAsRead": "Mark all as read",
+    "new": "New",
+    "unread": "Unread",
+    "read": "Read",
+    "alert": "Alert",
+    "reminder": "Reminder",
+    "update": "Update"
   },
   "validation": {
     "required": "This field is required",
     "email": "Invalid email address",
     "minLength": "Minimum {{count}} characters",
     "maxLength": "Maximum {{count}} characters",
-    "passwordMismatch": "Passwords do not match"
+    "passwordMismatch": "Passwords do not match",
+    "invalidFormat": "Invalid format",
+    "invalidDate": "Invalid date",
+    "mustBeNumber": "Must be a number",
+    "mustBePositive": "Must be positive"
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close menu",
+    "viewFavorites": "View favorites",
+    "aiSearch": "Search with artificial intelligence",
+    "mobileNavigation": "Mobile navigation menu",
+    "languageSelector": "Language selector",
+    "notifications": "Notifications",
+    "userAccount": "User account",
+    "messages": "Messages"
+  },
+  "errors": {
+    "pageNotFound": "Page not found",
+    "serverError": "Server error",
+    "networkError": "Network error",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Access forbidden",
+    "sessionExpired": "Session expired",
+    "tryAgain": "Try again",
+    "contactSupport": "Contact support"
+  },
+  "messages": {
+    "dataUpdated": "Data updated successfully",
+    "dataSaved": "Data saved",
+    "dataDeleted": "Data deleted",
+    "operationCompleted": "Operation completed",
+    "operationFailed": "Operation failed",
+    "pleaseWait": "Please wait",
+    "processingRequest": "Processing request"
   }
 }

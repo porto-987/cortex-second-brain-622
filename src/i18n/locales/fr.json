@@ -13,22 +13,113 @@
     "error": "Erreur",
     "success": "Succès",
     "warning": "Attention",
-    "info": "Information"
+    "info": "Information",
+    "add": "Ajouter",
+    "export": "Exporter",
+    "import": "Importer",
+    "refresh": "Actualiser",
+    "sort": "Trier",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "upload": "Téléverser",
+    "date": "Date",
+    "name": "Nom",
+    "type": "Type",
+    "status": "Statut",
+    "actions": "Actions",
+    "description": "Description",
+    "title": "Titre",
+    "content": "Contenu",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "about": "À propos",
+    "contact": "Contact",
+    "support": "Support",
+    "favorites": "Favoris",
+    "recent": "Récent",
+    "all": "Tout",
+    "none": "Aucun",
+    "other": "Autre",
+    "yes": "Oui",
+    "no": "Non",
+    "confirm": "Confirmer",
+    "submit": "Soumettre",
+    "apply": "Appliquer",
+    "reset": "Réinitialiser",
+    "clear": "Effacer",
+    "select": "Sélectionner",
+    "required": "Requis",
+    "optional": "Optionnel"
   },
   "header": {
     "title": "dalil.dz",
     "subtitle": "Plateforme de veille juridique et réglementaire",
-    "searchPlaceholder": "Recherche rapide..."
+    "searchPlaceholder": "Recherche rapide...",
+    "republicAr": "الجمهورية الجزائرية الديمقراطية الشعبية",
+    "republicFr": "République Algérienne Démocratique et Populaire"
   },
   "navigation": {
-    "dashboard": "Tableau de bord",
-    "legalTexts": "Textes juridiques",
-    "procedures": "Procédures administratives",
-    "analysis": "Analyses et rapports",
+    "dashboard": "Accueil",
+    "legalTexts": "Textes Juridiques",
+    "procedures": "Procédures Administratives",
+    "analysis": "Analyse & Rapports",
+    "ai": "Intelligence Artificielle",
     "collaboration": "Collaboration",
-    "news": "Actualités et références",
+    "news": "Actualités & Références",
     "configuration": "Configuration",
-    "help": "Aide"
+    "help": "Aide",
+    "menu": {
+      "legal": {
+        "catalog": "Catalogue",
+        "enrichment": "Alimentation de la banque de données",
+        "search": "Recherche"
+      },
+      "procedures": {
+        "catalog": "Catalogue",
+        "enrichment": "Alimentation de la banque de données",
+        "search": "Recherche",
+        "resources": "Ressources"
+      },
+      "analysis": {
+        "dashboards": "Tableaux de bord",
+        "analyticsDashboards": "Tableaux de bord analytiques",
+        "analysis": "Analyses",
+        "reports": "Rapports",
+        "assistedWriting": "Rédaction assistée"
+      },
+      "ai": {
+        "assistant": "Assistant IA Juridique",
+        "advanced": "IA Avancée",
+        "search": "Recherche IA"
+      },
+      "collaboration": {
+        "forum": "Forum",
+        "workspace": "Espace collaboratif",
+        "sharedResources": "Ressources partagées"
+      },
+      "news": {
+        "news": "Actualités",
+        "library": "Bibliothèque",
+        "dictionaries": "Dictionnaires",
+        "directories": "Annuaires"
+      },
+      "config": {
+        "nomenclature": "Nomenclature",
+        "complementaryResources": "Ressources complémentaires",
+        "dataManagement": "Gouvernance des Données",
+        "alertsNotifications": "Alertes & Notifications",
+        "userManagement": "Gestion utilisateurs",
+        "security": "Sécurité",
+        "performance": "Performance et Scalabilité",
+        "integrations": "Intégrations et Interopérabilité",
+        "accessibility": "Personnes à mobilité réduite",
+        "offline": "Mode hors-ligne",
+        "mobile": "Version mobile native"
+      }
+    }
   },
   "auth": {
     "login": "Connexion",
@@ -43,13 +134,153 @@
     "loginError": "Erreur de connexion",
     "registerError": "Erreur d'inscription",
     "loginSuccess": "Connexion réussie",
-    "registerSuccess": "Inscription réussie"
+    "registerSuccess": "Inscription réussie",
+    "profile": "Profil",
+    "account": "Compte",
+    "preferences": "Préférences"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue sur dalil.dz",
+    "quickAccess": "Accès rapide",
+    "recentDocuments": "Documents récents",
+    "statistics": "Statistiques",
+    "notifications": "Notifications",
+    "shortcuts": "Raccourcis",
+    "overview": "Vue d'ensemble"
+  },
+  "legalTexts": {
+    "title": "Textes Juridiques",
+    "catalog": "Catalogue des textes juridiques",
+    "search": "Rechercher des textes",
+    "addNew": "Ajouter un nouveau texte",
+    "type": "Type de texte",
+    "datePublication": "Date de publication",
+    "status": "Statut",
+    "reference": "Référence",
+    "subject": "Objet",
+    "ministry": "Ministère",
+    "journal": "Journal officiel",
+    "page": "Page",
+    "classification": "Classification"
+  },
+  "procedures": {
+    "title": "Procédures Administratives",
+    "catalog": "Catalogue des procédures",
+    "search": "Rechercher des procédures",
+    "addNew": "Ajouter une nouvelle procédure",
+    "steps": "Étapes",
+    "duration": "Durée",
+    "documents": "Documents requis",
+    "cost": "Coût",
+    "department": "Service concerné",
+    "complexity": "Complexité",
+    "category": "Catégorie"
+  },
+  "ai": {
+    "title": "Intelligence Artificielle",
+    "assistant": "Assistant IA Juridique",
+    "question": "Posez votre question",
+    "answer": "Réponse",
+    "suggestions": "Suggestions",
+    "conversation": "Conversation",
+    "newConversation": "Nouvelle conversation",
+    "history": "Historique",
+    "analysis": "Analyse",
+    "recommendations": "Recommandations"
+  },
+  "search": {
+    "title": "Recherche",
+    "advanced": "Recherche avancée",
+    "filters": "Filtres",
+    "results": "Résultats",
+    "noResults": "Aucun résultat trouvé",
+    "searchIn": "Rechercher dans",
+    "dateRange": "Plage de dates",
+    "sortBy": "Trier par",
+    "relevance": "Pertinence",
+    "dateAsc": "Date croissante",
+    "dateDesc": "Date décroissante",
+    "keywords": "Mots-clés",
+    "exactPhrase": "Expression exacte",
+    "anyWord": "N'importe quel mot",
+    "allWords": "Tous les mots"
+  },
+  "collaboration": {
+    "title": "Collaboration",
+    "forum": "Forum de discussion",
+    "workspace": "Espace de travail collaboratif",
+    "share": "Partager",
+    "comment": "Commenter",
+    "like": "Aimer",
+    "follow": "Suivre",
+    "message": "Message",
+    "thread": "Fil de discussion",
+    "post": "Publier",
+    "reply": "Répondre"
+  },
+  "reports": {
+    "title": "Rapports et Analyses",
+    "generate": "Générer un rapport",
+    "template": "Modèle",
+    "period": "Période",
+    "export": "Exporter",
+    "chart": "Graphique",
+    "table": "Tableau",
+    "summary": "Résumé",
+    "details": "Détails"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "markAsRead": "Marquer comme lu",
+    "markAllAsRead": "Tout marquer comme lu",
+    "new": "Nouveau",
+    "unread": "Non lu",
+    "read": "Lu",
+    "alert": "Alerte",
+    "reminder": "Rappel",
+    "update": "Mise à jour"
   },
   "validation": {
     "required": "Ce champ est requis",
     "email": "Adresse email invalide",
     "minLength": "Minimum {{count}} caractères",
     "maxLength": "Maximum {{count}} caractères",
-    "passwordMismatch": "Les mots de passe ne correspondent pas"
+    "passwordMismatch": "Les mots de passe ne correspondent pas",
+    "invalidFormat": "Format invalide",
+    "invalidDate": "Date invalide",
+    "mustBeNumber": "Doit être un nombre",
+    "mustBePositive": "Doit être positif"
+  },
+  "accessibility": {
+    "skipToContent": "Aller au contenu principal",
+    "openMenu": "Ouvrir le menu de navigation",
+    "closeMenu": "Fermer le menu",
+    "viewFavorites": "Voir les favoris",
+    "aiSearch": "Recherche avec intelligence artificielle",
+    "mobileNavigation": "Menu de navigation mobile",
+    "languageSelector": "Sélecteur de langue",
+    "notifications": "Notifications",
+    "userAccount": "Compte utilisateur",
+    "messages": "Messages"
+  },
+  "errors": {
+    "pageNotFound": "Page non trouvée",
+    "serverError": "Erreur du serveur",
+    "networkError": "Erreur de réseau",
+    "unauthorized": "Non autorisé",
+    "forbidden": "Accès interdit",
+    "sessionExpired": "Session expirée",
+    "tryAgain": "Réessayer",
+    "contactSupport": "Contacter le support"
+  },
+  "messages": {
+    "dataUpdated": "Données mises à jour avec succès",
+    "dataSaved": "Données sauvegardées",
+    "dataDeleted": "Données supprimées",
+    "operationCompleted": "Opération terminée",
+    "operationFailed": "Opération échouée",
+    "pleaseWait": "Veuillez patienter",
+    "processingRequest": "Traitement de la demande en cours"
   }
 }

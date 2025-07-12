@@ -1,5 +1,6 @@
 
 import { LanguageSelector } from "@/components/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 interface GovernmentHeaderProps {
   language: string;
@@ -7,23 +8,7 @@ interface GovernmentHeaderProps {
 }
 
 export function GovernmentHeader({ language, onLanguageChange }: GovernmentHeaderProps) {
-  const getHeaderText = (key: string) => {
-    const translations = {
-      fr: {
-        republicAr: "الجمهورية الجزائرية الديمقراطية الشعبية",
-        republicFr: "République Algérienne Démocratique et Populaire",
-      },
-      ar: {
-        republicAr: "الجمهورية الجزائرية الديمقراطية الشعبية",
-        republicFr: "République Algérienne Démocratique et Populaire",
-      },
-      en: {
-        republicAr: "الجمهورية الجزائرية الديمقراطية الشعبية",
-        republicFr: "People's Democratic Republic of Algeria",
-      }
-    };
-    return translations[language as keyof typeof translations]?.[key as keyof typeof translations['fr']] || key;
-  };
+  const { t } = useTranslation();
 
   return (
     <header className="text-white px-4 sm:px-6 py-2" style={{ backgroundColor: '#40915d' }}>
@@ -37,10 +22,10 @@ export function GovernmentHeader({ language, onLanguageChange }: GovernmentHeade
                 dir="rtl"
                 style={{ letterSpacing: '0.5px' }}
               >
-                {getHeaderText("republicAr")}
+                {t("header.republicAr")}
               </div>
               <div className="text-[9px] sm:text-[11px] font-normal opacity-90 mt-1 leading-tight tracking-[0.1em] text-center">
-                {getHeaderText("republicFr")}
+                {t("header.republicFr")}
               </div>
             </div>
           </div>

@@ -6,8 +6,12 @@ import { AdminPanel } from '@/components/admin/AdminPanel';
 import { UnifiedModalProvider } from '@/components/modals/unified/UnifiedModalProvider';
 import { EnhancedSecurityProvider } from '@/components/security/EnhancedSecurityProvider';
 import { PerformanceOptimizer } from '@/components/optimization/PerformanceOptimizer';
+import { useLanguageDirection } from '@/hooks/useLanguageDirection';
 
 function App() {
+  // Initialize language direction management
+  useLanguageDirection();
+
   return (
     <Router>
       <EnhancedSecurityProvider>

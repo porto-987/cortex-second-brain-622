@@ -14,90 +14,90 @@ import {
 export const menuItems = [
   {
     id: "accueil",
-    label: "Accueil",
+    labelKey: "navigation.dashboard",
     icon: Home,
     section: "dashboard"
   },
   {
     id: "textes-juridiques",
-    label: "Textes Juridiques",
+    labelKey: "navigation.legalTexts",
     icon: FileText,
     submenu: [
-      { label: "Catalogue", section: "legal-catalog" },
-      { label: "Alimentation de la banque de données", section: "legal-enrichment" },
-      { label: "Recherche", section: "legal-search" }
+      { labelKey: "navigation.menu.legal.catalog", section: "legal-catalog" },
+      { labelKey: "navigation.menu.legal.enrichment", section: "legal-enrichment" },
+      { labelKey: "navigation.menu.legal.search", section: "legal-search" }
     ]
   },
   {
     id: "procedures-administratives",
-    label: "Procédures Administratives",
+    labelKey: "navigation.procedures",
     icon: ClipboardList,
     submenu: [
-      { label: "Catalogue", section: "procedures-catalog" },
-      { label: "Alimentation de la banque de données", section: "procedures-enrichment" },
-      { label: "Recherche", section: "procedures-search" },
-      { label: "Ressources", section: "procedures-resources" }
+      { labelKey: "navigation.menu.procedures.catalog", section: "procedures-catalog" },
+      { labelKey: "navigation.menu.procedures.enrichment", section: "procedures-enrichment" },
+      { labelKey: "navigation.menu.procedures.search", section: "procedures-search" },
+      { labelKey: "navigation.menu.procedures.resources", section: "procedures-resources" }
     ]
   },
   {
     id: "analyse-rapports",
-    label: "Analyse & Rapports",
+    labelKey: "navigation.analysis",
     icon: BarChart3,
     submenu: [
-      { label: "Tableaux de bord", section: "dashboards" },
-      { label: "Tableaux de bord analytiques", section: "analytics-dashboards" },
-      { label: "Analyses", section: "analysis" },
-      { label: "Rapports", section: "reports" },
-      { label: "Rédaction assistée", section: "assisted-writing" }
+      { labelKey: "navigation.menu.analysis.dashboards", section: "dashboards" },
+      { labelKey: "navigation.menu.analysis.analyticsDashboards", section: "analytics-dashboards" },
+      { labelKey: "navigation.menu.analysis.analysis", section: "analysis" },
+      { labelKey: "navigation.menu.analysis.reports", section: "reports" },
+      { labelKey: "navigation.menu.analysis.assistedWriting", section: "assisted-writing" }
     ]
   },
   {
     id: "intelligence-artificielle",
-    label: "Intelligence Artificielle",
+    labelKey: "navigation.ai",
     icon: Brain,
     submenu: [
-      { label: "Assistant IA Juridique", section: "ai-assistant" },
-      { label: "IA Avancée", section: "ai-advanced" },
-      { label: "Recherche IA", section: "ai-search" }
+      { labelKey: "navigation.menu.ai.assistant", section: "ai-assistant" },
+      { labelKey: "navigation.menu.ai.advanced", section: "ai-advanced" },
+      { labelKey: "navigation.menu.ai.search", section: "ai-search" }
     ]
   },
   {
     id: "collaboration",
-    label: "Collaboration",
+    labelKey: "navigation.collaboration",
     icon: Users,
     submenu: [
-      { label: "Forum", section: "forum" },
-      { label: "Espace collaboratif", section: "collaborative-workspace" },
-      { label: "Ressources partagées", section: "shared-resources" }
+      { labelKey: "navigation.menu.collaboration.forum", section: "forum" },
+      { labelKey: "navigation.menu.collaboration.workspace", section: "collaborative-workspace" },
+      { labelKey: "navigation.menu.collaboration.sharedResources", section: "shared-resources" }
     ]
   },
   {
     id: "actualites-references",
-    label: "Actualités & Références",
+    labelKey: "navigation.news",
     icon: BookOpen,
     submenu: [
-      { label: "Actualités", section: "news" },
-      { label: "Bibliothèque", section: "library" },
-      { label: "Dictionnaires", section: "dictionaries" },
-      { label: "Annuaires", section: "directories" }
+      { labelKey: "navigation.menu.news.news", section: "news" },
+      { labelKey: "navigation.menu.news.library", section: "library" },
+      { labelKey: "navigation.menu.news.dictionaries", section: "dictionaries" },
+      { labelKey: "navigation.menu.news.directories", section: "directories" }
     ]
   },
   {
     id: "configuration",
-    label: "Configuration",
+    labelKey: "navigation.configuration",
     icon: Settings,
     submenu: [
-      { label: "Nomenclature", section: "nomenclature" },
-      { label: "Ressources complémentaires", section: "complementary-resources" },
-      { label: "Gouvernance des Données", section: "data-management" },
-      { label: "Alertes & Notifications", section: "alerts-notifications" },
-      { label: "Gestion utilisateurs", section: "user-management" },
-      { label: "Sécurité", section: "security" },
-      { label: "Performance et Scalabilité", section: "performance-scalability" },
-      { label: "Intégrations et Interopérabilité", section: "integrations-interoperability" },
-      { label: "Personnes à mobilité réduite", section: "accessibility-settings" },
-      { label: "Mode hors-ligne", section: "offline-mode" },
-      { label: "Version mobile native", section: "mobile-app" }
+      { labelKey: "navigation.menu.config.nomenclature", section: "nomenclature" },
+      { labelKey: "navigation.menu.config.complementaryResources", section: "complementary-resources" },
+      { labelKey: "navigation.menu.config.dataManagement", section: "data-management" },
+      { labelKey: "navigation.menu.config.alertsNotifications", section: "alerts-notifications" },
+      { labelKey: "navigation.menu.config.userManagement", section: "user-management" },
+      { labelKey: "navigation.menu.config.security", section: "security" },
+      { labelKey: "navigation.menu.config.performance", section: "performance-scalability" },
+      { labelKey: "navigation.menu.config.integrations", section: "integrations-interoperability" },
+      { labelKey: "navigation.menu.config.accessibility", section: "accessibility-settings" },
+      { labelKey: "navigation.menu.config.offline", section: "offline-mode" },
+      { labelKey: "navigation.menu.config.mobile", section: "mobile-app" }
     ]
   }
 ];

@@ -50,10 +50,11 @@ export function LegalTextFormEnhanced({
   };
 
   const handleAutoFill = () => {
-    toast({
-      title: "Auto-remplissage intelligent",
-      description: "Fonction d'auto-remplissage IA en cours de développement...",
+    // Ouvrir la modal d'auto-remplissage IA
+    const event = new CustomEvent('open-ai-autofill', {
+      detail: { context: 'legal-text' }
     });
+    window.dispatchEvent(event);
   };
 
   const handleFormSubmit = (data: any) => {

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -27,6 +27,18 @@ export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
   const { toast } = useToast();
   const [inputMethod, setInputMethod] = useState<'manual' | 'ocr'>('manual');
   const [showOCRScanner, setShowOCRScanner] = useState(false);
+
+  // Listen for OCR tab activation events
+  useEffect(() => {
+    const handleActivateOCRTab = () => {
+      setInputMethod('ocr');
+    };
+
+    window.addEventListener('activate-ocr-tab', handleActivateOCRTab);
+    return () => {
+      window.removeEventListener('activate-ocr-tab', handleActivateOCRTab);
+    };
+  }, []);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -94,10 +106,11 @@ export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
   };
 
   const handleAutoFill = () => {
-    toast({
-      title: "Auto-remplissage intelligent",
-      description: "Fonction d'auto-remplissage IA en cours de développement...",
+    // Ouvrir la modal d'auto-remplissage IA
+    const event = new CustomEvent('open-ai-autofill', {
+      detail: { context: 'procedure' }
     });
+    window.dispatchEvent(event);
   };
 
   const handleSubmit = (e: React.FormEvent) => {

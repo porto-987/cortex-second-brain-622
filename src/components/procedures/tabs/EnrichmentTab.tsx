@@ -32,7 +32,7 @@ export function EnrichmentTab({ onAddProcedure, onOCRTextExtracted }: Enrichment
     const event = new CustomEvent('open-procedure-form-with-ocr');
     window.dispatchEvent(event);
     
-    // Trigger the onAddProcedure to open the form
+    // Trigger the onAddProcedure to open the form with OCR tab pre-selected
     onAddProcedure();
     
     // After a small delay, activate the OCR tab

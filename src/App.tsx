@@ -6,6 +6,7 @@ import { AdminPanel } from '@/components/admin/AdminPanel';
 import { UnifiedModalProvider } from '@/components/modals/unified/UnifiedModalProvider';
 import { EnhancedSecurityProvider } from '@/components/security/EnhancedSecurityProvider';
 import { PerformanceOptimizer } from '@/components/optimization/PerformanceOptimizer';
+import { AIAutoFillGlobalManager } from '@/components/ai/AIAutoFillGlobalManager';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
               <Toaster />
+              <AIAutoFillGlobalManager />
             </div>
           </UnifiedModalProvider>
         </PerformanceOptimizer>

@@ -1,11 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { TrendingUp, TrendingDown, BarChart3, LineChart, Users, FileText, Activity, Eye, Brain, Target, Zap, Calendar, AlertTriangle, CheckCircle2, ArrowUpRight, ArrowDownRight, Download, Share2 } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { TrendingUp, TrendingDown, BarChart3, LineChart, Users, FileText, Activity, Eye, Brain, Target, Zap, Calendar, AlertTriangle, CheckCircle2, ArrowUpRight, ArrowDownRight, Download, Share2, Search, Filter, Settings, RefreshCw, Bell } from 'lucide-react';
 
 export function TrendsTab() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedPeriod, setSelectedPeriod] = useState('month');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const trendsData = [
     {
       title: "Consultations de textes juridiques",
@@ -166,21 +172,73 @@ export function TrendsTab() {
 
   return (
     <div className="space-y-8">
-      {/* En-tête enrichi */}
-      <div className="flex justify-between items-center">
+      {/* En-tête enrichi avec nouvelles fonctionnalités */}
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Tendances et Analyses Avancées</h2>
-          <p className="text-gray-600 mt-1">Insights en temps réel sur l'utilisation et les performances</p>
+          <h2 className="text-3xl font-bold text-gray-900">Tendances et Analyses Avancées</h2>
+          <p className="text-gray-600 mt-2">Insights en temps réel sur l'utilisation et les performances avec fonctionnalités d'analyse prédictive</p>
         </div>
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm">
-            <Download className="w-4 h-4 mr-2" />
-            Exporter
-          </Button>
-          <Button variant="outline" size="sm">
-            <Share2 className="w-4 h-4 mr-2" />
-            Partager
-          </Button>
+        
+        {/* Contrôles avancés */}
+        <div className="flex flex-col lg:flex-row gap-4">
+          {/* Barre de recherche */}
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Input
+              placeholder="Rechercher des tendances..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 w-64"
+            />
+          </div>
+          
+          {/* Filtres */}
+          <div className="flex gap-2">
+            <Select value={selectedPeriod} onValueChange={setSelectedPeriod}>
+              <SelectTrigger className="w-32">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="week">7 jours</SelectItem>
+                <SelectItem value="month">30 jours</SelectItem>
+                <SelectItem value="quarter">3 mois</SelectItem>
+                <SelectItem value="year">1 an</SelectItem>
+              </SelectContent>
+            </Select>
+            
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-40">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">Toutes catégories</SelectItem>
+                <SelectItem value="legal">Juridique</SelectItem>
+                <SelectItem value="admin">Administratif</SelectItem>
+                <SelectItem value="social">Social</SelectItem>
+                <SelectItem value="fiscal">Fiscal</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          
+          {/* Actions */}
+          <div className="flex gap-2">
+            <Button variant="outline" size="sm">
+              <RefreshCw className="w-4 h-4 mr-2" />
+              Actualiser
+            </Button>
+            <Button variant="outline" size="sm">
+              <Bell className="w-4 h-4 mr-2" />
+              Alertes
+            </Button>
+            <Button variant="outline" size="sm">
+              <Download className="w-4 h-4 mr-2" />
+              Exporter
+            </Button>
+            <Button variant="outline" size="sm">
+              <Share2 className="w-4 h-4 mr-2" />
+              Partager
+            </Button>
+          </div>
         </div>
       </div>
 

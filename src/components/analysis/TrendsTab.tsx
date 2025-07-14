@@ -454,33 +454,68 @@ export function TrendsTab() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Brain className="w-5 h-5 text-indigo-600" />
-              Insights prédictifs IA
+              <Brain className="w-5 h-5 text-green-600" />
+              Insights prédictifs IA enrichis
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {predictiveInsights.map((insight, index) => (
-                <div key={index} className={`p-4 rounded-lg border-l-4 ${getInsightTypeColor(insight.type)}`}>
+                <div
+                  key={index}
+                  className={`p-4 rounded-lg border-l-4 ${getInsightTypeColor(insight.type)} hover:shadow-md transition-shadow`}
+                >
                   <div className="flex items-start gap-3">
                     <insight.icon className="w-6 h-6 text-gray-600 mt-1" />
                     <div className="flex-1">
                       <h4 className="font-semibold text-gray-900 mb-1">{insight.title}</h4>
                       <p className="text-sm text-gray-700 mb-2">{insight.description}</p>
-                      <div className="flex items-center gap-4 text-xs text-gray-600">
-                        <span className="flex items-center gap-1">
-                          <CheckCircle2 className="w-3 h-3" />
-                          Confiance: {insight.confidence}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {insight.timeframe}
-                        </span>
+                      <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
+                        <span>Confiance: {insight.confidence}</span>
+                        <span>{insight.timeframe}</span>
+                      </div>
+                      {/* Actions disponibles */}
+                      <div className="flex gap-2">
+                        <Button size="sm" variant="outline" className="text-xs h-7">
+                          Analyser plus
+                        </Button>
+                        <Button size="sm" variant="outline" className="text-xs h-7">
+                          Créer alerte
+                        </Button>
+                        <Button size="sm" variant="outline" className="text-xs h-7">
+                          Rapport
+                        </Button>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
+              
+              {/* Exemples d'analyses avancées */}
+              <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border">
+                <h5 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Target className="w-4 h-4 text-blue-600" />
+                  Exemples d'analyses disponibles
+                </h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="bg-white p-3 rounded border border-gray-200 hover:border-blue-300 transition-colors cursor-pointer">
+                    <h6 className="font-medium text-sm text-gray-900">Analyse des pics d'utilisation</h6>
+                    <p className="text-xs text-gray-600 mt-1">Détection automatique des périodes de forte affluence</p>
+                  </div>
+                  <div className="bg-white p-3 rounded border border-gray-200 hover:border-green-300 transition-colors cursor-pointer">
+                    <h6 className="font-medium text-sm text-gray-900">Prédiction saisonnière</h6>
+                    <p className="text-xs text-gray-600 mt-1">Anticipation des besoins selon les cycles annuels</p>
+                  </div>
+                  <div className="bg-white p-3 rounded border border-gray-200 hover:border-purple-300 transition-colors cursor-pointer">
+                    <h6 className="font-medium text-sm text-gray-900">Analyse comportementale</h6>
+                    <p className="text-xs text-gray-600 mt-1">Patterns d'utilisation des différents profils utilisateurs</p>
+                  </div>
+                  <div className="bg-white p-3 rounded border border-gray-200 hover:border-orange-300 transition-colors cursor-pointer">
+                    <h6 className="font-medium text-sm text-gray-900">Optimisation du contenu</h6>
+                    <p className="text-xs text-gray-600 mt-1">Recommandations pour améliorer l'engagement</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </CardContent>
         </Card>

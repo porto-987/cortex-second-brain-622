@@ -9,6 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ArrowLeft, Settings, Save, Wand2, Plus, Trash2, ClipboardList, Scan, FileImage } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { OCRScanner } from '@/components/common/OCRScanner';
+import { DynamicFormRenderer } from '@/components/forms/DynamicFormRenderer';
+import { useFormLibrary } from '@/hooks/useFormLibrary';
 
 interface ProcedureFormProps {
   onClose: () => void;
@@ -25,8 +27,11 @@ interface ProcedureStep {
 
 export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
   const { toast } = useToast();
+  const { getProcedureFormForCategory } = useFormLibrary();
   const [inputMethod, setInputMethod] = useState<'manual' | 'ocr'>('manual');
   const [showOCRScanner, setShowOCRScanner] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>('');
+  const [dynamicFormData, setDynamicFormData] = useState<any>({});
 
   // Listen for OCR tab activation events
   useEffect(() => {
@@ -115,13 +120,21 @@ export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Données de la procédure:', formData);
-    onSubmit(formData);
+    // Combiner les données du formulaire dynamique et du formulaire classique
+    const finalData = { ...formData, ...dynamicFormData, procedureCategory: selectedCategory };
+    console.log('Données de la procédure:', finalData);
+    onSubmit(finalData);
     toast({
       title: "Procédure ajoutée",
-      description: `La procédure "${formData.title}" a été ajoutée avec succès.`,
+      description: `La procédure "${finalData.title || 'nouvelle procédure'}" a été ajoutée avec succès.`,
     });
   };
+
+  const handleDynamicFieldChange = (fieldName: string, value: any) => {
+    setDynamicFormData(prev => ({ ...prev, [fieldName]: value }));
+  };
+
+  const selectedTemplate = selectedCategory ? getProcedureFormForCategory(selectedCategory) : null;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-emerald-50 p-6">
@@ -267,7 +280,10 @@ export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="category" className="text-sm font-medium text-gray-700">Catégorie *</Label>
-                    <Select onValueChange={(value) => handleInputChange('category', value)}>
+                    <Select onValueChange={(value) => {
+                      handleInputChange('category', value);
+                      setSelectedCategory(value);
+                    }}>
                       <SelectTrigger className="border-gray-200 focus:border-blue-500 focus:ring-blue-500">
                         <SelectValue placeholder="Sélectionner" />
                       </SelectTrigger>
@@ -332,6 +348,16 @@ export function ProcedureForm({ onClose, onSubmit }: ProcedureFormProps) {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Formulaire dynamique adapté à la catégorie */}
+            {selectedTemplate && (
+              <DynamicFormRenderer
+                template={selectedTemplate}
+                formData={dynamicFormData}
+                onFieldChange={handleDynamicFieldChange}
+                className="mb-8"
+              />
+            )}
 
             {/* Section 2: Conditions et modalités */}
             <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-sm">
